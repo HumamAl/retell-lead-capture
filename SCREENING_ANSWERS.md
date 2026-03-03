@@ -4,7 +4,7 @@
 
 **1. A Retell agent you've built — demo call recording, live agent link, or detailed case study**
 
-Built a working demo of this exact pipeline — inbound voice flow capturing all 7 lead fields, SIP routing via Twilio, Make.com webhook trigger, lead logging: {VERCEL_URL}
+Built a working demo of this exact pipeline — inbound voice flow capturing all 7 lead fields, SIP routing via Twilio, Make.com webhook trigger, lead logging: https://retell-lead-capture.vercel.app
 
 For Retell: I've configured conversation nodes with branching logic for the edge cases you listed (out-of-scope requests, incomplete info, frustrated callers), connected via SIP trunk, and pushed structured payloads to Make.com webhook scenarios.
 
@@ -36,4 +36,4 @@ $1,500 fixed-price for Phase 1 as scoped: Retell agent configured and tested, Tw
 
 **6. Geographic routing or scheduling automation experience (bonus)**
 
-Yes — built zone-based routing logic that maps ZIP codes to service areas and crew schedules. The demo includes a Service Zones preview (Phase 2 teaser) showing exactly that: {VERCEL_URL}. Straightforward to wire into Make.com once Phase 1 is stable.
+Yes — built zone-based routing logic that maps ZIP codes to service areas and crew schedules. The demo includes a Service Zones preview (Phase 2 teaser) showing exactly that: https://retell-lead-capture.vercel.app. Straightforward to wire into Make.com once Phase 1 is stable.
