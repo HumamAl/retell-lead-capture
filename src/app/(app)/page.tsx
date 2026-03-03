@@ -194,7 +194,7 @@ function getStatusColor(status: LeadStatus): string {
     case "Estimate Scheduled":
       return "bg-primary/10 text-primary border-primary/30";
     case "Estimate Sent":
-      return "bg-blue-500/10 text-blue-700 border-blue-500/30";
+      return "bg-primary/8 text-primary border-primary/20";
     case "Following Up":
       return "bg-warning/10 text-warning-foreground border-warning/30";
     case "New":
