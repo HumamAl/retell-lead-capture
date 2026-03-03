@@ -1,37 +1,56 @@
-import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+import { OutcomeStatement } from "./outcome-statement";
 
 interface ChallengeCardProps {
+  index: number;
   title: string;
   description: string;
   outcome?: string;
-  children: React.ReactNode;
-  className?: string;
+  children?: ReactNode;
 }
 
 export function ChallengeCard({
+  index,
   title,
   description,
   outcome,
   children,
-  className,
 }: ChallengeCardProps) {
+  const stepNumber = String(index + 1).padStart(2, "0");
+
   return (
     <div
-      className={cn(
-        "bg-card border border-border/60 shadow-[0_1px_2px_0_rgb(0_0_0/0.03)] rounded-lg p-6 space-y-4 hover:border-primary/30 hover:shadow-[0_2px_8px_0_rgb(0_0_0/0.05)] transition-all duration-150",
-        className
-      )}
+      className="bg-card border border-border p-5 space-y-4"
+      style={{
+        borderRadius: "var(--radius)",
+        boxShadow: "var(--card-shadow)",
+        transition: "border-color var(--t-interactive), box-shadow var(--t-interactive)",
+      }}
     >
-      <div>
-        <h2 className="text-lg font-semibold">{title}</h2>
-        <p className="text-sm text-muted-foreground mt-1">{description}</p>
+      {/* Header row: step number + title */}
+      <div className="flex items-baseline gap-3">
+        <span
+          className="text-sm font-bold tabular-nums shrink-0 w-6"
+          style={{ color: "var(--primary)", opacity: 0.7 }}
+        >
+          {stepNumber}
+        </span>
+        <h3 className="text-base font-semibold leading-snug">{title}</h3>
       </div>
-      {children}
-      {outcome && (
-        <div className="pt-2 border-t border-border/60">
-          <p className="text-sm font-medium text-[color:var(--success)]">{outcome}</p>
-        </div>
-      )}
+
+      {/* Description */}
+      <p
+        className="text-sm leading-relaxed pl-9"
+        style={{ color: "var(--muted-foreground)" }}
+      >
+        {description}
+      </p>
+
+      {/* Visualization slot */}
+      {children && <div className="pl-0">{children}</div>}
+
+      {/* Outcome statement */}
+      {outcome && <OutcomeStatement outcome={outcome} />}
     </div>
   );
 }

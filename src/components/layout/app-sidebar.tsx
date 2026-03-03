@@ -6,13 +6,17 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { APP_CONFIG } from "@/lib/config";
 import {
-  LayoutDashboard,
+  Activity,
   ChevronLeft,
   ChevronRight,
   Lightbulb,
   User,
   ArrowRight,
   Github,
+  Phone,
+  ClipboardList,
+  Zap,
+  MapPin,
 } from "lucide-react";
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -23,9 +27,11 @@ import {
 // ═══════════════════════════════════════════════════════════════════════════
 
 const navItems = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  // Dashboard Builder agent: add 3-5 feature page nav items here.
-  // Example: { href: "/orders", label: "Orders", icon: ShoppingCart },
+  { href: "/", label: "Lead Pipeline", icon: Activity },
+  { href: "/call-log", label: "Call Log", icon: Phone },
+  { href: "/estimate-queue", label: "Estimate Queue", icon: ClipboardList },
+  { href: "/automation", label: "Automation Status", icon: Zap },
+  { href: "/zones", label: "Service Zones", icon: MapPin },
 ];
 
 function SidebarLogo({ collapsed }: { collapsed: boolean }) {
